@@ -1,7 +1,6 @@
 'use strict';
 
 require('should');
-var fs = require('fs');
  
 var imageHydrater = require('../lib/hydrater-image');
 
@@ -15,11 +14,10 @@ describe('Test results', function() {
     imageHydrater(__dirname + "/samples/imagemagick.jpg", document, function(err, document) {
       if(err) {
         throw err;
-    }
+      }
 
-      document.should.have.property('thumb');
-      document.should.have.property('binary_document_type', "document");
-      document.metadatas.should.have.property('content-encoding', 'ISO-8859-1');
+      document.metadatas.should.have.property('thumb').and.include('data:image/png;base64');
+      document.should.have.property('binary_document_type', "image");
 
       done();
     });
