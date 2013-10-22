@@ -3,14 +3,11 @@
 
 # TODO: use our recipe for tika
 $script = <<SCRIPT
-cd /vagrant; npm install
-mkdir /etc/tika-1.4
-wget -O /etc/tika-1.4/tika-app-1.4.jar http://repo1.maven.org/maven2/org/apache/tika/tika-app/1.4/tika-app-1.4.jar
-echo Tika rocks like the Rolling Stones rock the stage ...
+sudo apt-get install imagemagick
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  config.vm.hostname = "cluestrhydratertika"
+  config.vm.hostname = "cluestrhydraterimage"
 
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
@@ -24,15 +21,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
     chef.run_list = [
       "recipe[apt]",
-      "recipe[java]",
       "recipe[nodejs]",
     ]
 
     chef.json = {
-      :java => {
-        :install_flavor => "openjdk",
-        :jdk_version => "7"
-      }
     }
   end
 

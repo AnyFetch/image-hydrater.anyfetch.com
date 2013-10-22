@@ -4,11 +4,11 @@
 var cluestrFileHydrater = require('cluestr-file-hydrater');
 
 var config = require('./config/configuration.js');
-var tika = require('./lib/hydrater-tika');
+var imageHydrater = require('./lib/hydrater-image');
 
 var serverConfig = {
   concurrency: config.concurrency,
-  hydrater_function: tika
+  hydrater_function: imageHydrater
 };
 
 var server = cluestrFileHydrater.createServer(serverConfig);
