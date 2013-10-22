@@ -1,0 +1,48 @@
+{
+  "name": "cluestr-hydrater-tika",
+  "version": "0.1.0",
+  "author": "Dartus Pierre-Marie <dartus.pierremarie@gmail.com>",
+  "contributors": [
+    {
+      "name": "Robin Ricard",
+      "email": "ricard.robin@gmail.com"
+    },
+    {
+      "name": "Matthieu Bacconnier",
+      "email": "matthieu.bacconnier@papiel.fr"
+    }
+  ],
+  "bin": {
+    "server": "./bin/server"
+  },
+  "scripts": {
+    "start": "node ./bin/server",
+    "test": "NODE_ENV=test mocha -R spec -t 10000 test/ test/test-*/*",
+    "lint": "jshint lib/ test/ config/ bin/"
+  },
+  "main": "./lib/tika-hydrater",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Papiel/papiel_core"
+  },
+  "keywords": [
+    "cluestr",
+    "hydrater",
+    "tika"
+  ],
+  "dependencies": {
+    "async": "0.2.x",
+    "sspawn": "0.1.1",
+    "cluestr-file-hydrater": "x.x.x"
+  },
+  "devDependencies": {
+    "mocha": "1.11.x",
+    "should": "1.2.x",
+    "supertest": "0.7.x",
+    "jshint": "2.1.x"
+  },
+  "licence": "Copyright Papiel",
+  "engines": {
+    "node": ">=0.10"
+  }
+}
