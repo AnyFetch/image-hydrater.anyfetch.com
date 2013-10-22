@@ -8,7 +8,9 @@ var imageHydrater = require('../lib/hydrater-image');
 describe('Test results', function() {
   it('returns the correct informations', function(done) {
     var document = {
-      metadatas: {}
+      metadatas: {
+        'content-type': 'image/jpeg'
+      }
     };
 
     imageHydrater(__dirname + "/samples/imagemagick.jpg", document, function(err, document) {
@@ -17,6 +19,7 @@ describe('Test results', function() {
       }
 
       document.metadatas.should.have.property('thumb').and.include('data:image/png;base64');
+      document.metadatas.should.have.property('display').and.include('data:image/jpeg;base64');
       document.should.have.property('binary_document_type', "image");
 
       done();

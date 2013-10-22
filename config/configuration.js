@@ -21,6 +21,6 @@ module.exports = {
   workers: process.env.WORKERS || 2,
 
   thumb_size: "350x250",
-  image_size: "750x750",
+  display_size: "750x750",
   concurrency: process.env.IMAGE_CONCURRENCY || default_concurrency
 };
