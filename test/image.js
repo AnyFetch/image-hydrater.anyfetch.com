@@ -9,7 +9,6 @@ describe('Test results', function() {
   it('returns the correct informations', function(done) {
     var document = {
       metadatas: {
-        'content-type': 'image/jpeg'
       }
     };
 
