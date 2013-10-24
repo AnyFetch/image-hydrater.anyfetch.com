@@ -8,8 +8,7 @@ var imageHydrater = require('../lib/hydrater-image');
 describe('Test results', function() {
   it('returns the correct informations', function(done) {
     var document = {
-      datas: {
-      }
+      datas: {}
     };
 
     imageHydrater(__dirname + "/samples/imagemagick.jpg", document, function(err, document) {
