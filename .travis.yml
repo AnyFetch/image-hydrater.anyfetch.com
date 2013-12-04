@@ -1,5 +1,12 @@
 language: node_js
 node_js:
-  - "0.10"
+- '0.10'
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: AgjHxMyYbZmjE1uTXJ2v+jBtUZmG46bCWiyP6cYYZ3GnFVbj+xPkYPxwun3VNc9NJHtTUQ8I6C8SEq3u8LSnWT8Ly2QQbRNPdz1kFUFFmwbu4rgbYbotRMbpo1ucw273GEj0nhz3VEDwT3mQtZ3Kr+75h3x0ycD0ic6OaBmqvus=
+  app: anyfetch-hydrater-image
+  on:
+    repo: Papiel/hydrater-image
