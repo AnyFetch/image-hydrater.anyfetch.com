@@ -2,7 +2,7 @@
 
 require('should');
  
-var imageHydrater = require('../lib/hydrater-image');
+var imageHydrater = require('../lib/');
 
 
 describe('Test results', function() {
