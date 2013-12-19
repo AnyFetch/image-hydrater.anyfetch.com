@@ -18,7 +18,6 @@ if(node_env === "production") {
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
-  workers: process.env.WORKERS || 2,
 
   thumb_size: "350x250",
   display_size: "750x750",
