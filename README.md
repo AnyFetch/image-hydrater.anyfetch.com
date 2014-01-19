@@ -1,7 +1,7 @@
-# Image Cluestr Hydrater
-> Visit http://cluestr.com for details about Cluestr.
+# Image AnyFetch Hydrater
+> Visit http://anyfetch.com for details about AnyFetch.
 
-Cluestr Hydrater for images.
+AnyFetch Hydrater for images.
 
 # How to install?
 Vagrant up everything (`vagrant up`, `vagrant ssh`).

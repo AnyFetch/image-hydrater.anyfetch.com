@@ -1,5 +1,5 @@
 {
-  "name": "cluestr-hydrater-image",
+  "name": "anyfetch-hydrater-image",
   "version": "1.0.0",
   "author": "Matthieu Bacconnier <matthieu@papiel.fr>",
   "bin": {
@@ -16,13 +16,13 @@
     "url": "https://github.com/Papiel/hydrater-image"
   },
   "keywords": [
-    "cluestr",
+    "anyfetch",
     "hydrater",
     "tika"
   ],
   "dependencies": {
     "async": "0.2.x",
-    "cluestr-file-hydrater": "x.x.x",
+    "anyfetch-file-hydrater": "x.x.x",
     "newrelic": "1.x.x"
   },
   "devDependencies": {
