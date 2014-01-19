@@ -1,5 +1,5 @@
 {
-  "name": "anyfetch-hydrater-image",
+  "name": "anyfetch-image-hydrater",
   "version": "1.0.0",
   "author": "Matthieu Bacconnier <matthieu@papiel.fr>",
   "bin": {
@@ -13,7 +13,7 @@
   "main": "./lib/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papiel/hydrater-image"
+    "url": "https://github.com/Papiel/image.hydrater.anyfetch.com"
   },
   "keywords": [
     "anyfetch",
