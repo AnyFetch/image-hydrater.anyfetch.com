@@ -7,7 +7,7 @@ sudo apt-get install imagemagick
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  config.vm.hostname = "cluestrhydraterimage"
+  config.vm.hostname = "anyfetchhydraterimage"
 
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
