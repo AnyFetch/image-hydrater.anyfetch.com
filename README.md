@@ -4,7 +4,11 @@
 AnyFetch Hydrater for images.
 
 # How to install?
-Vagrant up everything (`vagrant up`, `vagrant ssh`).
+```
+sudo apt-get install imagemagick
+npm install
+```
 
+Check everything is working with `npm test`.
 
 Support: `support@papiel.fr`.
