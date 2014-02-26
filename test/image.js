@@ -8,7 +8,10 @@ var imageHydrater = require('../lib/');
 describe('Test results', function() {
   it('returns the correct informations', function(done) {
     var document = {
-      datas: {}
+      datas: {},
+      metadatas: {
+        path: "osef",
+      }
     };
 
     imageHydrater(__dirname + "/samples/imagemagick.jpg", document, function(err, document) {
@@ -21,6 +24,22 @@ describe('Test results', function() {
       document.should.have.property('document_type', "image");
 
       done();
+    });
+  });
+  it('should skip psd', function(done){
+    var initDocument = {
+      datas: {},
+      metadatas: {
+        path: "osef.psd",
+      }
+    };
+    imageHydrater(__dirname + "/samples/imagemagick.psd", initDocument, function(err, document) {
+      if(err) {
+        throw err;
+      }
+      if (document === initDocument){
+        done();
+      }
     });
   });
 });
