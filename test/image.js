@@ -23,4 +23,25 @@ describe('Test results', function() {
       done();
     });
   });
+
+  it('skip when already provided', function(done) {
+    var document = {
+      datas: {
+        thumb: 'http://somewhere.com',
+        display: 'http://somewhere.com'
+      }
+    };
+
+    imageHydrater(__dirname + "/samples/imagemagick.jpg", document, function(err, document) {
+      if(err) {
+        throw err;
+      }
+
+      document.datas.should.have.property('thumb', 'http://somewhere.com');
+      document.datas.should.have.property('display', 'http://somewhere.com');
+      document.should.have.property('document_type', "image");
+
+      done();
+    });
+  });
 });
