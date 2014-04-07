@@ -27,6 +27,23 @@ describe('Test results', function() {
     });
   });
 
+  it('test', function(done) {
+    var document = {
+      datas: {},
+      metadatas: {
+        path: "osef",
+      }
+    };
+
+    imageHydrater(__dirname + "/samples/imagemagick.psd", document, function(err, document) {
+      if(err) {
+        throw err;
+      }
+
+      done();
+    });
+  });
+
   it('skip when already provided', function(done) {
     var document = {
       datas: {
