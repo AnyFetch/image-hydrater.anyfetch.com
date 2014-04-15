@@ -59,9 +59,28 @@ describe('Test results', function() {
       if(err) {
         throw err;
       }
-      if (document === initDocument){
-        done();
+      document.should.have.property("hydration_errored", true);
+      document.should.have.property("hydration_error");
+
+      done();
+    });
+  });
+
+  it('should return errored document', function(done){
+    var initDocument = {
+      datas: {},
+      metadatas: {
+        path: "errored.psd",
       }
+    };
+    imageHydrater(__dirname + "/samples/errored.psd", initDocument, function(err, document) {
+      if(err) {
+        throw err;
+      }
+      document.should.have.property("hydration_errored", true);
+      document.should.have.property("hydration_error");
+
+      done();
     });
   });
 });
