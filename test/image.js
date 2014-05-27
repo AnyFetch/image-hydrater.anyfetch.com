@@ -3,6 +3,7 @@
 require('should');
 
 var imageHydrater = require('../lib/');
+var anyfetchFileHydrater = require('anyfetch-file-hydrater');
 
 
 describe('Test results', function() {
@@ -14,12 +15,7 @@ describe('Test results', function() {
       }
     };
 
-    var changes = {
-      metadatas: {},
-      user_access: [],
-      actions: {},
-      datas: {}
-    };
+    var changes = anyfetchFileHydrater.defaultChanges();
 
     imageHydrater(__dirname + "/samples/imagemagick.jpg", document, changes, function(err, changes) {
       if(err) {
@@ -42,12 +38,7 @@ describe('Test results', function() {
       }
     };
 
-    var changes = {
-      metadatas: {},
-      user_access: [],
-      actions: {},
-      datas: {}
-    };
+    var changes = anyfetchFileHydrater.defaultChanges();
 
     imageHydrater(__dirname + "/samples/imagemagick.jpg", document, changes, function(err, changes) {
       if(err) {
@@ -69,18 +60,13 @@ describe('Test results', function() {
       }
     };
 
-    var initChanges = {
-      metadatas: {},
-      user_access: [],
-      actions: {},
-      datas: {}
-    };
+    var changes = anyfetchFileHydrater.defaultChanges();
 
-    imageHydrater(__dirname + "/samples/imagemagick.psd",document, initChanges, function(err, changes) {
+    imageHydrater(__dirname + "/samples/imagemagick.psd",document, changes, function(err, changes) {
       if(err) {
         throw err;
       }
-      changes.should.be.eql(initChanges);
+      changes.should.be.eql(anyfetchFileHydrater.defaultChanges());
 
       done();
     });
