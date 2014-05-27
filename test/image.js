@@ -14,14 +14,21 @@ describe('Test results', function() {
       }
     };
 
-    imageHydrater(__dirname + "/samples/imagemagick.jpg", document, function(err, document) {
+    var changes = {
+      metadatas: {},
+      user_access: [],
+      actions: {},
+      datas: {}
+    };
+
+    imageHydrater(__dirname + "/samples/imagemagick.jpg", document, changes, function(err, changes) {
       if(err) {
         throw err;
       }
 
-      document.datas.should.have.property('thumb').and.include('data:image/png;base64');
-      document.datas.should.have.property('display').and.include('data:image/jpeg;base64');
-      document.should.have.property('document_type', "image");
+      changes.datas.should.have.property('thumb').and.include('data:image/png;base64');
+      changes.datas.should.have.property('display').and.include('data:image/jpeg;base64');
+      changes.should.have.property('document_type', "image");
 
       done();
     });
@@ -35,31 +42,45 @@ describe('Test results', function() {
       }
     };
 
-    imageHydrater(__dirname + "/samples/imagemagick.jpg", document, function(err, document) {
+    var changes = {
+      metadatas: {},
+      user_access: [],
+      actions: {},
+      datas: {}
+    };
+
+    imageHydrater(__dirname + "/samples/imagemagick.jpg", document, changes, function(err, changes) {
       if(err) {
         throw err;
       }
 
-      document.datas.should.have.property('thumb', 'http://somewhere.com');
-      document.datas.should.have.property('display', 'http://somewhere.com');
-      document.should.have.property('document_type', "image");
+      changes.datas.should.eql({});
+      changes.should.have.property('document_type', "image");
 
       done();
     });
   });
 
   it('should skip psd', function(done){
-    var initDocument = {
+    var document = {
       datas: {},
       metadatas: {
         path: "osef.psd",
       }
     };
-    imageHydrater(__dirname + "/samples/imagemagick.psd", initDocument, function(err, document) {
+
+    var initChanges = {
+      metadatas: {},
+      user_access: [],
+      actions: {},
+      datas: {}
+    };
+
+    imageHydrater(__dirname + "/samples/imagemagick.psd",document, initChanges, function(err, changes) {
       if(err) {
         throw err;
       }
-      document.should.be.eql(initDocument);
+      changes.should.be.eql(initChanges);
 
       done();
     });
