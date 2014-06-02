@@ -5,6 +5,7 @@ require('should');
 var imageHydrater = require('../lib/');
 var anyfetchFileHydrater = require('anyfetch-file-hydrater');
 
+var hydrationError = anyfetchFileHydrater.hydrationError;
 
 describe('Test results', function() {
   it('returns the correct informations', function(done) {
@@ -69,6 +70,25 @@ describe('Test results', function() {
       changes.should.be.eql(anyfetchFileHydrater.defaultChanges());
 
       done();
+    });
+  });
+
+  it('should return an errored document', function(done) {
+    var document = {
+      metadatas: {
+        path: "/samples/errored.jpg",
+      }
+    };
+
+    var changes = anyfetchFileHydrater.defaultChanges();
+
+    imageHydrater(__dirname + "/samples/errored.jpg", document, changes, function(err) {
+      if(err instanceof hydrationError) {
+        done();
+      }
+      else {
+        done(new Error("invalid error"));
+      }
     });
   });
 
