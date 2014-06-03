@@ -10,8 +10,8 @@ var hydrationError = anyfetchFileHydrater.hydrationError;
 describe('Test results', function() {
   it('returns the correct informations', function(done) {
     var document = {
-      datas: {},
-      metadatas: {
+      data: {},
+      metadata: {
         path: "osef",
       }
     };
@@ -23,8 +23,8 @@ describe('Test results', function() {
         throw err;
       }
 
-      changes.datas.should.have.property('thumb').and.include('data:image/png;base64');
-      changes.datas.should.have.property('display').and.include('data:image/jpeg;base64');
+      changes.data.should.have.property('thumb').and.include('data:image/png;base64');
+      changes.data.should.have.property('display').and.include('data:image/jpeg;base64');
       changes.should.have.property('document_type', "image");
 
       done();
@@ -33,7 +33,7 @@ describe('Test results', function() {
 
   it('skip when already provided', function(done) {
     var document = {
-      datas: {
+      data: {
         thumb: 'http://somewhere.com',
         display: 'http://somewhere.com'
       }
@@ -46,7 +46,7 @@ describe('Test results', function() {
         throw err;
       }
 
-      changes.datas.should.eql({});
+      changes.data.should.eql({});
       changes.should.have.property('document_type', "image");
 
       done();
@@ -55,8 +55,8 @@ describe('Test results', function() {
 
   it('should skip psd', function(done){
     var document = {
-      datas: {},
-      metadatas: {
+      data: {},
+      metadata: {
         path: "osef.psd",
       }
     };
@@ -75,7 +75,7 @@ describe('Test results', function() {
 
   it('should return an errored document', function(done) {
     var document = {
-      metadatas: {
+      metadata: {
         path: "/samples/errored.jpg",
       }
     };

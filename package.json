@@ -13,7 +13,7 @@
   "main": "./lib/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papiel/image.hydrater.anyfetch.com"
+    "url": "https://github.com/AnyFetch/image.hydrater.anyfetch.com"
   },
   "keywords": [
     "anyfetch",
@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "async": "0.9.x",
-    "anyfetch-file-hydrater": ">=0.2.13",
+    "anyfetch-file-hydrater": ">=0.2.16",
     "newrelic": "1.x.x"
   },
   "devDependencies": {
