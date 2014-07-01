@@ -53,26 +53,6 @@ describe('Test results', function() {
     });
   });
 
-  it('should skip psd', function(done){
-    var document = {
-      data: {},
-      metadata: {
-        path: "osef.psd",
-      }
-    };
-
-    var changes = anyfetchFileHydrater.defaultChanges();
-
-    imageHydrater(__dirname + "/samples/imagemagick.psd",document, changes, function(err, changes) {
-      if(err) {
-        throw err;
-      }
-      changes.should.be.eql(anyfetchFileHydrater.defaultChanges());
-
-      done();
-    });
-  });
-
   it('should return an errored document', function(done) {
     var document = {
       metadata: {
