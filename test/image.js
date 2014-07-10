@@ -3,7 +3,7 @@
 require('should');
 
 var imageHydrater = require('../lib/');
-var anyfetchFileHydrater = require('anyfetch-file-hydrater');
+var anyfetchFileHydrater = require('anyfetch-hydrater');
 
 var hydrationError = anyfetchFileHydrater.hydrationError;
 
