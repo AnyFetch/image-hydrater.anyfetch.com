@@ -3,9 +3,9 @@
 require('should');
 
 var imageHydrater = require('../lib/');
-var anyfetchFileHydrater = require('anyfetch-hydrater');
+var anyfetchHydrater = require('anyfetch-hydrater');
 
-var hydrationError = anyfetchFileHydrater.hydrationError;
+var hydrationError = anyfetchHydrater.hydrationError;
 
 describe('Test results', function() {
   it('returns the correct informations', function(done) {
@@ -16,7 +16,7 @@ describe('Test results', function() {
       }
     };
 
-    var changes = anyfetchFileHydrater.defaultChanges();
+    var changes = anyfetchHydrater.defaultChanges();
 
     imageHydrater(__dirname + "/samples/imagemagick.jpg", document, changes, function(err, changes) {
       if(err) {
@@ -39,7 +39,7 @@ describe('Test results', function() {
       }
     };
 
-    var changes = anyfetchFileHydrater.defaultChanges();
+    var changes = anyfetchHydrater.defaultChanges();
 
     imageHydrater(__dirname + "/samples/imagemagick.jpg", document, changes, function(err, changes) {
       if(err) {
@@ -60,7 +60,7 @@ describe('Test results', function() {
       }
     };
 
-    var changes = anyfetchFileHydrater.defaultChanges();
+    var changes = anyfetchHydrater.defaultChanges();
 
     imageHydrater(__dirname + "/samples/errored.jpg", document, changes, function(err) {
       if(err instanceof hydrationError) {
