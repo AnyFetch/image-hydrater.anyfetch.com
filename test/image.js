@@ -23,8 +23,8 @@ describe('Test results', function() {
         throw err;
       }
 
-      changes.data.should.have.property('thumb').and.include('data:image/png;base64');
-      changes.data.should.have.property('display').and.include('data:image/jpeg;base64');
+      changes.data.should.have.property('thumb').and.containDeep('data:image/png;base64');
+      changes.data.should.have.property('display').and.containDeep('data:image/jpeg;base64');
       changes.should.have.property('document_type', "image");
 
       done();
