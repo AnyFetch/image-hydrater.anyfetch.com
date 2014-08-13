@@ -5,7 +5,7 @@ require('should');
 var imageHydrater = require('../lib/');
 var anyfetchHydrater = require('anyfetch-hydrater');
 
-var hydrationError = anyfetchHydrater.hydrationError;
+var HydrationError = anyfetchHydrater.HydrationError;
 
 describe('Test results', function() {
   it('returns the correct informations', function(done) {
@@ -63,7 +63,7 @@ describe('Test results', function() {
     var changes = anyfetchHydrater.defaultChanges();
 
     imageHydrater(__dirname + "/samples/errored.jpg", document, changes, function(err) {
-      if(err instanceof hydrationError) {
+      if(err instanceof HydrationError) {
         done();
       }
       else {
