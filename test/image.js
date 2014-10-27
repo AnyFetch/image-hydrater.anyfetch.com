@@ -23,7 +23,7 @@ describe('Test results', function() {
         throw err;
       }
 
-      changes.data.should.have.property('thumb').and.containDeep('data:image/png;base64');
+      changes.metadata.should.have.property('thumb').and.containDeep('data:image/png;base64');
       changes.data.should.have.property('display').and.containDeep('data:image/jpeg;base64');
       changes.should.have.property('document_type', "image");
 
@@ -33,8 +33,10 @@ describe('Test results', function() {
 
   it('skip when already provided', function(done) {
     var document = {
-      data: {
+      metadata: {
         thumb: 'http://somewhere.com',
+      },
+      data: {
         display: 'http://somewhere.com'
       }
     };
