@@ -7,7 +7,7 @@ var config = require('./config/configuration.js');
 
 config.hydrater_function = __dirname + '/lib/index.js';
 
-var server = anyfetchHydrater.createServer(server);
+var server = anyfetchHydrater.createServer(config);
 
 // Expose the server
 module.exports = server;
