@@ -23,5 +23,11 @@ module.exports = {
   display_size: "750x750",
   redisUrl: process.env.REDIS_URL,
   concurrency: process.env.IMAGE_CONCURRENCY || defaultConcurrency,
-  appName: process.env.APP_NAME || "imahe-hydrater"
+  appName: process.env.APP_NAME || "imahe-hydrater",
+
+  opbeat: {
+    organizationId: process.env.OPBEAT_ORGANIZATION_ID,
+    appId: process.env.OPBEAT_APP_ID,
+    secretToken: process.env.OPBEAT_SECRET_TOKEN
+  }
 };
